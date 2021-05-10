@@ -1,13 +1,13 @@
 # Madlibs is a word (aka string) concatenation game where you have a predefined
 # text with a lot of blank spaces which you will add words to.
-# This program creates a unique template where you just have to insert a text and
+# This program creates a unique template where you just have to insert a base text and
 # Define the percentage of blank spaces
 
 from random import randint
 
 # Choose the filename
 while True:
-    filename = 'madlibs.txt'#input('Filename: ')
+    filename = input('Filename: ')
     try:
         x = open(filename, 'r')
         x.close()
@@ -18,7 +18,7 @@ while True:
 
 # Percentage of the text you wanto to convert to '_____'
 while True:
-    percent = 30#input("Percentage 0-100 (exclusive) of blank spaces: ")
+    percent = input("Percentage 0-100 (exclusive) of blank spaces: ")
     try:
         percent = int(percent)
         if type(percent) == int and percent > 0 and percent < 100:
