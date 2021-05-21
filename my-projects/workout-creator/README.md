@@ -1,13 +1,12 @@
 # Workout Creator
 
-## Generate a workout program by choosing "randomly" the exercises for each muscle group.
-## This approach may help you to avoid injury and to have results more consistently.
+## Generate a workout program by choosing "randomly" the exercises for each muscle group. This approach may help you to avoid injury and to have results more consistently.
 
 ### I want to be able to define some filters like: === [NOT YET]
-Markup : * Which muscles I will train each day 
-         * How many exercises I want to do per day
-         * Which exercises I don't want to do
-         * So on...
+####  * Which muscles I will train each day 
+####  * How many exercises I want to do per day
+####  * Which exercises I don't want to do
+####  * So on...
 
 ## Development process:
 
