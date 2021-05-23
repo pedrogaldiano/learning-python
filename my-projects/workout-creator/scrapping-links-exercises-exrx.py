@@ -68,7 +68,8 @@ def main():
         
         for link_ex in links_ex:
             with open(filename, 'a') as exercises:
-                exercises.write(link_ex + '\n')
+                exercises.write(link_ex)
+                exercises.write('\n')
                 
         
 if __name__ == '__main__':
