@@ -11,11 +11,11 @@
 ## Development process:
 
 #### First: I scrap the exrx.net (they have one of the biggest exercise database avaiable for free online (+1400 exercises))
-#####        Get all the links to the exercises pages ==== [OK]
-#####        Get all the exercises info ==== [OK]
+Get all the links to the exercises pages ==== [OK]
+Get all the exercises info ==== [OK]
 
 #### Second: Create a efficiently SQL database (probably the SQLite is enough)
-#####        Store everything in one table ==== [OK]
-#####        MAKE TWO BACKUPS (GIT + LOCAL) ==== [OK]
-#####        Find out which collumns could be break in a relational database === [Nops]
-#####        Create a relational database === [Nops]
+Store everything in one table ==== [OK]
+MAKE TWO BACKUPS (GIT + LOCAL) ==== [OK]
+Find out which collumns could be break in a relational database === [Nops]
+Create a relational database === [Nops]
