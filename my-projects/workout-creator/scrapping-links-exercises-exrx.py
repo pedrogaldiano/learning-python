@@ -41,11 +41,11 @@ def get_links_exercises(soup):
         try:
             a_tag_href = a_tag['href']
             if a_tag_href[0] == '.' or a_tag_href[0] == 'h':
-                if ('WeightExercises' in a_tag_href or \
-                    'Stretches' in a_tag_href or \
-                    'Aerobic' in a_tag_href or \
-                    'Plyometrics' in a_tag_href or \
-                    'Kettlebell' in a_tag_href):
+                if ('WeightExercises' in a_tag_href): #or \
+                    # 'Stretches' in a_tag_href or \
+                    # 'Aerobic' in a_tag_href or \
+                    # 'Plyometrics' in a_tag_href or \
+                    # 'Kettlebell' in a_tag_href):
     
                     a_tag_href = a_tag_href.replace('../../','https://exrx.net/') \
                         .replace('../','https://exrx.net/')
