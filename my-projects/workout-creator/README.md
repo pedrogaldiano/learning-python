@@ -16,6 +16,7 @@ Get all the exercises info ==== [OK]
 
 #### Second: Create a efficiently SQL database (probably the SQLite is enough)
 Store everything in one table ==== [OK]  
-MAKE TWO BACKUPS (GIT + LOCAL) ==== [OK]  
+MAKE TWO BACKUPS (GIT + LOCAL) ==== [OK]
+Clean up the database (took way longer than a expected) ==== [OK]
 Find out which collumns could be break in a relational database === [Nops]  
 Create a relational database === [Nops]  
