@@ -1,3 +1,4 @@
+# Create one singe table to store all the information
 import sqlite3
 
 conn = sqlite3.connect('table-all.db')
