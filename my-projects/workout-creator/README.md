@@ -8,7 +8,7 @@ I just figured out that the Terms of Use of exrx.net don't allow scrapping or an
 Sorry, I didn't know it was prohibited.  
 I will get data from an [open source project in git hub from davejt](https://github.com/davejt/exercise). I choose to not use the API since the most crucial part of the data I can get from a CSV file.  
 
-I'm throwing away all my work so far , but I won hide this because were part of my development process. :)  
+I'm throwing away all my work so far , but I won't hide this because were part of my development process. :)  
 
 
 ## Development process:
@@ -28,7 +28,8 @@ I'm throwing away all my work so far , but I won hide this because were part of 
 * Get the [exercise database](https://github.com/davejt/exercise) in CSV ==== [OK]  
 * Delete the database created with the exrx.net data ==== [OK]  
 * Delete the python file with the scrapping application ==== [OK]  
-* I decided to delete everything, most of the files were dependents on the scrapping or database.  So it didn't make sense to keep them.  
+* I decided to delete everything, most of the files were dependents on the scrapping or database.  So it didn't make sense to keep some of them.  
+* Create a SQLite database with the data from the CSV file
 
 #### Fourth: Now I have to create a code that will choose those exercises, but HOW?
 * No idea.. hahahaha  
