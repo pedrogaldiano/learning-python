@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="../static/styles.css" rel="stylesheet">
+        <title>Workout Generator</title>
+    </head>
+    
+    <body>
+        <header>    
+            <h2>Generate your workout routine!</h2>
+        </header>
+
+        <section>
+            <nav>
+            <a>link1</a><a>link2</a><a>link3</a>
+            </nav>
+            <article>
+                <ul>
+                    <p><h3>Beware of:</h3></p>
+                    <li>I just wanted to be able to vary my own routine a 
+                    little bit.</li>
+                    <li>I'm not a health professional in anyway.</li>
+                    <li>The routine created is <b>JUST A SUGGESTION</b>.</li>
+                    <li>You can (and I strongly encourage you to) ignore/add 
+                    exercises at your will.</li>
+                    <li>I hope this is some how useful to you.</li>
+                    <li>If you find some bug or have a suggestion click here 
+                    to contact me.</li>
+                </ul> 
+            <article>
+            
+            <article>
+                <h3>Complete the form:</h3>
+                
+                <form action="/" method="POST">
+                <h4>Personal info (OPTIONAL)</h4>
+                <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+                <input autocomplete="off" name="weight" placeholder="Weight (kg)" type="number" min="0">
+                <input autocomplete="off" name="height  " placeholder="Height (cm)" type="number" min="0">
+                
+                <h4>Select a routine style</h4>
+                <input type="radio" name="routine" value="full body">
+                    <label for="full Body">Full Body</label>
+                    
+                <input type="radio" name="routine" value="push/pull">
+                    <label for="push/pull">Push/Pull<label>
+                    
+                <input type="radio" name="routine" value="push/pull/legs">
+                    <label for="push/pull/legs">Push/Pull/Legs</label>
+                    
+                <input type="radio" name="routine" value="personalized">
+                    <label for="personalized">Personalized</label>
+                
+                  <!-- ADD THIS LATER
+                  <h4>Choose the Muscles</h4>
+                 <input type="checkbox" name="abdominals">
+                    <label for="abdominals">Abdominals</label>
+                <input type="checkbox" name="middle back">
+                    <label for="middle back">Middle Back</label>
+                <input type="checkbox" name="amstrings">
+                    <label for="hamstrings">Hamstrings</label>
+                <input type="checkbox" name="abductors">
+                    <label for="abductors">Abductors</label>
+                <input type="checkbox" name="forearms">
+                    <label for="forearms">Forearms</label><br/>
+                <input type="checkbox" name="neck">
+                    <label for="neck">Neck</label>
+                <input type="checkbox" name="quadriceps">
+                    <label for="quadriceps">Quadriceps</label>
+                <input type="checkbox" name="lats">
+                    <label for="lats">Lats</label>
+                <input type="checkbox" name="lower back">
+                    <label for="lower back">Lower Back</label>
+                <input type="checkbox" name="glutes">
+                    <label for="glutes">Glutes</label><br/>
+                <input type="checkbox" name="chest">
+                    <label for="chest">Chest</label>
+                <input type="checkbox" name="aaa">
+                    <label for="shoulders">Shoulders</label>
+                <input type="checkbox" name="shoulders">
+                    <label for="calves">Calves</label>
+                <input type="checkbox" name="calves">
+                    <label for="triceps">Triceps</label>
+                <input type="checkbox" name="triceps">
+                    <label for="biceps">Biceps</label><br/>
+                <input type="checkbox" name="biceps">
+                    <label for="adductors">Adductors</label>
+                <input type="checkbox" name="adductors">
+                    <label for="traps">Traps</label> -->
+
+                <br/><br/><br/>
+                <input type="submit" value="Generate Workout">  
+                
+                
+            </article>
+            
+        
+        </section>
+        
+        <footer>
+            <p>hehehe</p>
+        </footer>
+        
+    </body>
+</html>

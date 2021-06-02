@@ -4,9 +4,10 @@ import random
 
 def user_split():
     while True:
-        split = input('''Choose your routine: full \
-body, push/pull, push/pull/legs\n''')
-
+#         split = input('''Choose your routine: full \
+# body, push/pull, push/pull/legs\n''')
+        
+        split = 'full body'
         if split in ['full body', 'push/pull', 'push/pull/legs']:
             break
             
@@ -60,29 +61,32 @@ def legs():
     return exercises
 
 
-def main():
+def create_routine():
     split = user_split()
     print(split, '|| 3 x 8~12\n=======================')
 
     # add images of the muscles you will train each day with this program
     if split == 'full body':
         exercises = full()
-        for exercise in exercises:
-            print(exercise)
+        return exercises
+        # for exercise in exercises:
+        #     print(exercise)
         
 
     elif split == 'push/pull':
         exercises = push() + pull()
-        for exercise in exercises:
-           print(exercise)
+        return exercises
+        # for exercise in exercises:
+        #     print(exercise)
        
     elif split == 'push/pull/legs':
         exercises = push() + pull() + legs()
-        for exercise in exercises:
-           print(exercise)
+        return exercises
+        # for exercise in exercises:
+        #     print(exercise)
         
         
     
     
-if __name__ == '__main__':
-    main()
+if __name__ == 'create_routine':
+    create_routine()
