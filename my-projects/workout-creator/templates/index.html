@@ -9,35 +9,33 @@
     
     <body>
         <header>    
-            <h2>Generate your workout routine!</h2>
+            <h2>Workout Generator!</h2>
             <small>We randomly choose the exercises for you!</small>
                 <br/><br/><br/>
         </header>
 
         <section>            
             <article>
-                <h3>Complete the form:</h3>
-                
+                <h3>Complete the form</h3>
                 <form action="/" method="POST">
-                <h4>Personal info (OPTIONAL)</h4>
-                <input class="input_text" id="name" autocomplete="off" autofocus name="name" placeholder="Name" type="text">
-                <input class="input_text" id="email" autocomplete="off" name="email" placeholder="Email" type="email">
-                <input class="input_text" id="number" autocomplete="off" name="weight" placeholder="Weight (kg)" type="number" min="0">
-                <input class="input_text" id="number" autocomplete="off" name="height  " placeholder="Height (cm)" type="number" min="0">
+                <input class="input_text" id="name" autocomplete="off" autofocus name="name" placeholder="Name (optional)" type="text">
+                <br/>
+                <input class="input_text" id="number" autocomplete="off" name="weight" placeholder="Weight (kg)" type="number" min="0" max="300">
+                <input class="input_text" id="number" autocomplete="off" name="height  " placeholder="Height (cm)" type="number" min="0" max="220">
                 
-                <h4>Select a routine style</h4>
-                <input class="input_radio" type="radio" name="routine" value="full body">
-                    <label for="full Body">Full Body</label>
-                    
-                <input class="input_radio" type="radio" name="routine" value="push/pull">
-                    <label for="push/pull">Push/Pull<label>
-                    
-                <input class="input_radio" type="radio" name="routine" value="push/pull/legs">
-                    <label for="push/pull/legs">Push/Pull/Legs</label>
-
+                <h3>Routine</h3>
+                <input type="radio" name="routine" value="full body">
+                    <label class="input_radio" for="full Body">Full Body</label>
+                    <br/>
+                <input type="radio" name="routine" value="push/pull">
+                    <label class="input_radio" for="push/pull">Push | Pull</label>
+                    <br/>
+                <input type="radio" name="routine" value="push/pull/legs">
+                    <label class="input_radio" for="push/pull/legs">Push | Pull | Legs</label>
+            
                 
                 <br/><br/>
-                <h4>Define the number of sets and reps per exercise:</h4>
+                <h3>Sets and reps per exercise:</h3>
                 <select class="input_option" name="sets">
                 <option disabled selected value="">Sets</option>
                 {% for number in range(1,11) %}
@@ -46,7 +44,7 @@
                 </select>
                 
                 <select class="input_option name="reps">
-                <option disabled selected value="">Reps</option>
+                <option  disabled selected value="">Reps</option>
                 {% for number in range(1,31) %}
                     <option value="{{ number }}">{{ number }}</option>
                 {% endfor %}
@@ -100,7 +98,7 @@
         </section>
         
         <footer>
-            <p>hehehe</p>
+            <p>Follow this workout at your own risk.</p>
         </footer>
         
     </body>
