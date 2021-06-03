@@ -2,16 +2,12 @@ import sqlite3
 import random
 
 
-def user_split():
-    while True:
-#         split = input('''Choose your routine: full \
-# body, push/pull, push/pull/legs\n''')
-        
-        split = 'full body'
+def user_input(input_routine):
+        split = input_routine
         if split in ['full body', 'push/pull', 'push/pull/legs']:
-            break
-            
-    return split
+            return split
+        
+        
         
 def get_exercise(force):
     connect = sqlite3.connect('exercises-data.db')
@@ -61,32 +57,23 @@ def legs():
     return exercises
 
 
-def create_routine():
-    split = user_split()
-    print(split, '|| 3 x 8~12\n=======================')
+def create_routine(routine):
+    user_routine = user_input(routine)
 
     # add images of the muscles you will train each day with this program
-    if split == 'full body':
+    if user_routine == 'full body':
         exercises = full()
         return exercises
-        # for exercise in exercises:
-        #     print(exercise)
         
-
-    elif split == 'push/pull':
+    elif user_routine == 'push/pull':
         exercises = push() + pull()
         return exercises
-        # for exercise in exercises:
-        #     print(exercise)
-       
-    elif split == 'push/pull/legs':
+  
+    elif user_routine == 'push/pull/legs':
         exercises = push() + pull() + legs()
         return exercises
-        # for exercise in exercises:
-        #     print(exercise)
-        
-        
     
-    
-if __name__ == 'create_routine':
-    create_routine()
+    else:
+        return None
+
+        

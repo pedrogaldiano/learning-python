@@ -10,48 +10,48 @@
     <body>
         <header>    
             <h2>Generate your workout routine!</h2>
+            <small>We randomly choose the exercises for you!</small>
+                <br/><br/><br/>
         </header>
 
-        <section>
-            <nav>
-            <a>link1</a><a>link2</a><a>link3</a>
-            </nav>
-            <article>
-                <ul>
-                    <p><h3>Beware of:</h3></p>
-                    <li>I just wanted to be able to vary my own routine a 
-                    little bit.</li>
-                    <li>I'm not a health professional in anyway.</li>
-                    <li>The routine created is <b>JUST A SUGGESTION</b>.</li>
-                    <li>You can (and I strongly encourage you to) ignore/add 
-                    exercises at your will.</li>
-                    <li>I hope this is some how useful to you.</li>
-                    <li>If you find some bug or have a suggestion click here 
-                    to contact me.</li>
-                </ul> 
-            <article>
-            
+        <section>            
             <article>
                 <h3>Complete the form:</h3>
                 
                 <form action="/" method="POST">
                 <h4>Personal info (OPTIONAL)</h4>
-                <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
-                <input autocomplete="off" name="weight" placeholder="Weight (kg)" type="number" min="0">
-                <input autocomplete="off" name="height  " placeholder="Height (cm)" type="number" min="0">
+                <input class="input_text" id="name" autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+                <input class="input_text" id="email" autocomplete="off" name="email" placeholder="Email" type="email">
+                <input class="input_text" id="number" autocomplete="off" name="weight" placeholder="Weight (kg)" type="number" min="0">
+                <input class="input_text" id="number" autocomplete="off" name="height  " placeholder="Height (cm)" type="number" min="0">
                 
                 <h4>Select a routine style</h4>
-                <input type="radio" name="routine" value="full body">
+                <input class="input_radio" type="radio" name="routine" value="full body">
                     <label for="full Body">Full Body</label>
                     
-                <input type="radio" name="routine" value="push/pull">
+                <input class="input_radio" type="radio" name="routine" value="push/pull">
                     <label for="push/pull">Push/Pull<label>
                     
-                <input type="radio" name="routine" value="push/pull/legs">
+                <input class="input_radio" type="radio" name="routine" value="push/pull/legs">
                     <label for="push/pull/legs">Push/Pull/Legs</label>
-                    
-                <input type="radio" name="routine" value="personalized">
-                    <label for="personalized">Personalized</label>
+
+                
+                <br/><br/>
+                <h4>Define the number of sets and reps per exercise:</h4>
+                <select class="input_option" name="sets">
+                <option disabled selected value="">Sets</option>
+                {% for number in range(1,11) %}
+                    <option value="{{ number }}">{{ number }}</option>
+                {% endfor %}
+                </select>
+                
+                <select class="input_option name="reps">
+                <option disabled selected value="">Reps</option>
+                {% for number in range(1,31) %}
+                    <option value="{{ number }}">{{ number }}</option>
+                {% endfor %}
+                </select>
+                
                 
                   <!-- ADD THIS LATER
                   <h4>Choose the Muscles</h4>
@@ -89,10 +89,10 @@
                     <label for="adductors">Adductors</label>
                 <input type="checkbox" name="adductors">
                     <label for="traps">Traps</label> -->
-
-                <br/><br/><br/>
-                <input type="submit" value="Generate Workout">  
                 
+                <br/><br/><br/>
+                <input class="input_submit" type="submit" value="Generate Workout">  
+                </form>
                 
             </article>
             
