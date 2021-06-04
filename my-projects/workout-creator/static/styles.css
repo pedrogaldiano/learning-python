@@ -13,11 +13,7 @@ header {
     background-color: #171818;
     padding-top: 1px;
     border-radius: 4px;  
-    padding-bottom: 0px;
-}
-
-article {
-    padding-top: 0px;
+    padding-bottom: 15px;
 }
 
 input,select {
@@ -26,12 +22,14 @@ input,select {
     margin-top: 2px;  
 }
 
-#name {
-    padding: 10px 16px;
-    margin-bottom: 6px;
+#goal {
+    width: 105px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
-#number, .input_option {
+
+.input_text, .input_option {
     width: 85px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -43,7 +41,7 @@ h3 {
 }
 
 .input_radio {
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .input_submit {
@@ -53,7 +51,7 @@ h3 {
     width: 150;
     height: 50px;
     font-size:  17px;
-    margin: auto;
+    margin-top: 25px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -61,6 +59,6 @@ h3 {
 
 footer {
     margin-top: 30px;
-    line-heigth: 0.5;
+    line-height: 0.5;
     font-size: 15px;
 }

@@ -1,4 +1,12 @@
-FOI????????????
+{% extends "layout.html" %}
 
-<br/><br/>
-{{ routine }}
+{% block section %}
+    
+    <h3>{{ name }}</h3>
+    <h3>{{ weight }}</h3>
+    <h3>{{ heigth }}</h3>
+    <h3>{{ sets }}</h3>
+    <h3>{{ reps }}</h3>
+    <h3>{{ routine }}</h3>
+
+{% endblock %}
