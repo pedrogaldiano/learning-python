@@ -62,3 +62,35 @@ footer {
     line-height: 0.5;
     font-size: 15px;
 }
+
+table {
+    margin-top: 30px;
+    max-width: 600px;
+    min-width: 600px;    
+    margin-left: auto;
+    margin-right: auto;
+}
+.personal_info {
+    width: 40%;    
+}
+
+.workout {
+
+    width: 500px;;    
+}
+tr {
+    height: 45px
+}
+
+table, tr, td {
+    border: 2.5px solid black;
+    border-collapse: collapse;
+    height: 40px;
+    
+    line-height: 1;
+}
+
+table tr:first-child td{
+    background-color: #171818;
+    font-weight: bold;
+}

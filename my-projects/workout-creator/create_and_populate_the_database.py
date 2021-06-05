@@ -31,11 +31,11 @@ def exercises_db(csv_file, db):
         for line in csv:
             items = line.replace('\n','').split(',')
             
-            db.execute('SELECT muscle_id FROM muscles WHERE muscle_name = ?', [items[1].lstrip()])
+            db.execute('SELECT muscle_id FROM muscles WHERE muscle_name = ?', [items[1].lstrip().capitalize()])
             muscle_id = db.fetchone()
             if not muscle_id is None:
                 try:
-                    db.execute("INSERT INTO exercises(exercise, muscle_id) VALUES (?, ?)", (items[0], muscle_id[0]))
+                    db.execute("INSERT INTO exercises(exercise, muscle_id) VALUES (?, ?)", (items[0].capitalize(), muscle_id[0]))
                 except:
                     pass
     print('Exercises added')
@@ -54,7 +54,7 @@ def muscles_db(csv_file, db):
     for muscle_unique in muscles_unique:
         if muscle_unique == '' or muscle_unique == ' ': 
             continue
-        db.execute("INSERT INTO muscles (muscle_name) VALUES (?)", [muscle_unique.lstrip()])
+        db.execute("INSERT INTO muscles (muscle_name) VALUES (?)", [muscle_unique.lstrip().capitalize()])
     
     print('Muscles added')
 

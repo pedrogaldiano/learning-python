@@ -1,12 +1,36 @@
 {% extends "layout.html" %}
 
 {% block section %}
-    
-    <h3>{{ name }}</h3>
-    <h3>{{ weight }}</h3>
-    <h3>{{ heigth }}</h3>
-    <h3>{{ sets }}</h3>
-    <h3>{{ reps }}</h3>
-    <h3>{{ routine }}</h3>
+    <table class="personal_info">
+        <tr>
+            <td>Goal</td>
+            <td>Height (cm)</td>
+            <td>Weight (kg)</td>
+            <td>IMC</td>
+        </tr>
+        <tr>
+            <td>{{ goal }}</td>
+            <td>{{ height }}</td>
+            <td>{{ weight }}</td>
+            <td>{{ imc }}</td>
+        </tr>
+    </table>
 
+   {% for day in routine %}
+    <table class="workout">
+    
+        <td>Exercise Name</td>    
+        <td>Target Muscle</td>
+
+        
+        {% for exercises in day %}
+        <tr>
+            <td>{{ exercises[0] }}</td>   
+            <td>{{ exercises[1] }}</td>
+
+                       
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
 {% endblock %}

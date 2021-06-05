@@ -13,7 +13,7 @@ def get_exercise(force):
     connect = sqlite3.connect('exercises-data.db')
     db = connect.cursor()
     
-    db.execute('''SELECT exercise FROM exercises
+    db.execute('''SELECT exercise muscle_name FROM exercises
                INNER JOIN muscles USING (muscle_id)
                WHERE muscle_name = ?''', [force])    
     
@@ -26,34 +26,34 @@ def get_exercise(force):
 
 
 def full():
-    exercises =['\nFULL BODY\n=======================']
-    for target in ['middle back', 'lower back', 'chest', 'chest', 'hamstrings', \
-              'quadriceps', 'calves', 'shoulders', 'abdominals']:
-        exercises.append(get_exercise(target))   
+    exercises =[('Full Body Day','3 sets x 8~12 reps')]
+    for target in ['Middle back', 'Lower back', 'Chest', 'Chest', 'Hamstrings',
+              'Quadriceps', 'Calves', 'Shoulders', 'Abdominals']:
+        exercises.append((get_exercise(target), target))   
     return exercises
     
 
 def push():
-    exercises =['\nPUSH\n=======================']
-    for target in ['middle back', 'lower back', 'middle back', 'lower back', 'biceps', \
-              'biceps', 'forearms', 'traps', 'abdominals']:
-        exercises.append(get_exercise(target))   
+    exercises = [('Push Day','3 sets x 8~12 reps')]
+    for target in ['Middle back', 'Middle back', 'Lower back', 'Lower back', 
+                   'Biceps', 'Biceps', 'Forearms', 'Traps', 'Abdominals']:
+        exercises.append((get_exercise(target), target))   
     return exercises
 
 
 def pull():
-    exercises =['\nPULL\n=======================']
-    for target in ['chest', 'chest', 'chest', 'lats', 'triceps', \
-              'triceps', 'shoulders', 'shoulders', 'abdominals']:
-        exercises.append(get_exercise(target))   
+    exercises = [('Pull Day','3 sets x 8~12 reps')]
+    for target in ['Chest', 'Chest', 'Chest', 'Lats', 'Triceps',
+                   'Triceps', 'Shoulders', 'Shoulders', 'Abdominals']:
+        exercises.append((get_exercise(target), target))   
     return exercises
 
 
 def legs():
-    exercises =['\nLEGS\n=======================']
-    for target in ['hamstrings', 'hamstrings', 'quadriceps', 'quadriceps', 'adductors', \
-              'abductors', 'glutes', 'glutes', 'calves']:
-        exercises.append(get_exercise(target))   
+    exercises = [('Legs Day','3 sets x 8~12 reps')]
+    for target in ['Hamstrings', 'Hamstrings', 'Quadriceps', 'Quadriceps',
+                   'Adductors', 'Abductors', 'Glutes', 'Glutes', 'Calves']:
+        exercises.append((get_exercise(target), target))
     return exercises
 
 
@@ -62,18 +62,26 @@ def create_routine(routine):
 
     # add images of the muscles you will train each day with this program
     if user_routine == 'full body':
-        exercises = full()
+        exercises = [full()]
         return exercises
         
     elif user_routine == 'push/pull':
-        exercises = push() + pull()
+        exercises = [push()]+ [pull()]
         return exercises
   
     elif user_routine == 'push/pull/legs':
-        exercises = push() + pull() + legs()
+        exercises = [push()] + [pull()] + [legs()]
         return exercises
     
     else:
         return None
 
-        
+# routine = (create_routine('push/pull/legs'))
+# print(routine)
+
+# for days in routine:
+#     print(days,'\n')
+#     print()
+#     for exercises in days:
+#         print(exercises)
+#     print()
