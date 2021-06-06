@@ -25,7 +25,9 @@
         
         {% for exercises in day %}
         <tr>
-            <td>{{ exercises[0] }}</td>   
+            <td><a href="https://www.youtube.com/results?search_query={{ exercises[0] }}"
+            target="_blank" rel="noopener noreferrer">
+            {{ exercises[0] }}</a></td>   
             <td>{{ exercises[1] }}</td>
 
                        
