@@ -1,20 +1,6 @@
 {% extends "layout.html" %}
 
 {% block section %}
-    <table class="personal_info">
-        <tr>
-            <td>Goal</td>
-            <td>Height (cm)</td>
-            <td>Weight (kg)</td>
-            <td>IMC</td>
-        </tr>
-        <tr>
-            <td>{{ goal }}</td>
-            <td>{{ height }}</td>
-            <td>{{ weight }}</td>
-            <td>{{ imc }}</td>
-        </tr>
-    </table>
 
    {% for day in routine %}
     <table class="workout">
@@ -24,10 +10,10 @@
 
         
         {% for exercises in day %}
+        
         <tr>
             <td><a href="https://www.youtube.com/results?search_query={{ exercises[0] }}"
-            target="_blank" rel="noopener noreferrer">
-            {{ exercises[0] }}</a></td>   
+            target="_blank" rel="noopener noreferrer">{{ exercises[0] }}</a></td>   
             <td>{{ exercises[1] }}</td>
 
                        
@@ -35,4 +21,5 @@
         {% endfor %}
     </table>
     {% endfor %}
+    
 {% endblock %}

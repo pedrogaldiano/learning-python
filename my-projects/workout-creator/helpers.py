@@ -1,25 +1,29 @@
 import sqlite3
 import random
 
-def IMC(height, weight):
-    imc =int(weight)/(int(height)/100)**2
+ # def IMC(height, weight):
+ #    imc =int(weight)/(int(height)/100)**2
     
-    if imc <= 18.5:
-        return 'Underweight'
-    elif imc > 18.5 and imc <= 25:
-        return 'Healthy'
-    elif imc > 25 and imc <= 30:
-        return 'Overweight'
-    elif imc > 30 and imc <= 39.9:
-        return 'Obese'
-    else:
-        return 'Extremely Obese'
+ #    if imc <= 18.5:
+ #        return 'Underweight'
+ #    elif imc > 18.5 and imc <= 25:
+ #        return 'Healthy'
+ #    elif imc > 25 and imc <= 30:
+ #        return 'Overweight'
+ #    elif imc > 30 and imc <= 39.9:
+ #        return 'Obese'
+ #    else:
+ #        return 'Extremely Obese'
 
-def user_input(input_routine):
-        split = input_routine
-        if split in ['full body', 'push/pull', 'push/pull/legs']:
-            return split
-        
+
+def check_input(input_routine):
+        selected = input_routine
+        if selected in ['Full body', 'Push', 'Pull', 'Legs', 'Abductors',
+                        'Chest', 'Glutes', 'Triceps','Traps', 'Calves',
+                        'Quadriceps', 'Lower back', 'Neck','Middle back',
+                        'Lats', 'Shoulders', 'Adductors', 'Abdominals',
+                        'Biceps', 'Forearms', 'Hamstrings']:
+            return selected
         
         
 def get_exercise(force):
@@ -30,7 +34,6 @@ def get_exercise(force):
                INNER JOIN muscles USING (muscle_id)
                WHERE muscle_name = ?''', [force])    
     
-    
     exercises = db.fetchall()
     exercise = random.choice(exercises)[0]
     
@@ -39,15 +42,16 @@ def get_exercise(force):
 
 
 def full():
-    exercises =[('Full Body Day','3 sets x 8~12 reps')]
-    for target in ['Middle back', 'Lower back', 'Chest', 'Chest', 'Hamstrings',
-              'Quadriceps', 'Calves', 'Shoulders', 'Abdominals']:
+    exercises = [] #[('Full Body Day','3 sets x 8~12 reps')]
+    for target in ['Middle back', 'Lower back', 'Chest', 'Chest',
+                   'Hamstrings', 'Quadriceps', 'Calves', 'Shoulders', 
+                   'Abdominals']:
         exercises.append((get_exercise(target), target))   
     return exercises
     
 
 def push():
-    exercises = [('Push Day','3 sets x 8~12 reps')]
+    exercises = [] # [('Push Day','3 sets x 8~12 reps')]
     for target in ['Middle back', 'Middle back', 'Lower back', 'Lower back', 
                    'Lats', 'Biceps', 'Biceps', 'Forearms', 'Abdominals']:
         exercises.append((get_exercise(target), target))   
@@ -55,7 +59,7 @@ def push():
 
 
 def pull():
-    exercises = [('Pull Day','3 sets x 8~12 reps')]
+    exercises = [] # [('Pull Day','3 sets x 8~12 reps')]
     for target in ['Chest', 'Chest', 'Chest', 'Triceps', 'Triceps', 
                    'Shoulders', 'Shoulders', 'Traps', 'Abdominals']:
         exercises.append((get_exercise(target), target))   
@@ -63,34 +67,56 @@ def pull():
 
 
 def legs():
-    exercises = [('Legs Day','3 sets x 8~12 reps')]
+    exercises = [] #[('Legs Day','3 sets x 8~12 reps')]
     for target in ['Hamstrings', 'Hamstrings', 'Quadriceps', 'Quadriceps',
                    'Adductors', 'Abductors', 'Glutes', 'Glutes', 'Calves']:
         exercises.append((get_exercise(target), target))
     return exercises
 
 
-def create_routine(routine):
-    user_routine = user_input(routine)
-
-    # add images of the muscles you will train each day with this program
-    if user_routine == 'full body':
-        exercises = [full()]
-        return exercises
+def create_basic_routine(routine):
+    exercises = []
+    for i in routine:
+        user = check_input(i)
         
-    elif user_routine == 'push/pull':
-        exercises = [push()]+ [pull()]
-        return exercises
-  
-    elif user_routine == 'push/pull/legs':
-        exercises = [push()] + [pull()] + [legs()]
-        return exercises
-    
-    else:
-        return None
+        if user == 'Full body':
+            exercises = [full()]
+            
+        elif user == 'Push':
+            exercises.append(push())
+      
+        elif user == 'Pull':
+            exercises.append(pull())
+            
+        elif user == 'Legs':
+            exercises.append(legs())
+      
+    return exercises
 
-# routine = (create_routine('push/pull/legs'))
+
+def create_personalized_routine(routine):
+    targets = []
+    for (muscle, times) in routine:
+        targets += ([muscle] * times)
+    
+    exercises = []
+    for target in targets:
+        exercises.append((get_exercise(target), target))
+    
+    return exercises
+        
+        
+        
+        
+# routine = create_personalized_routine([('Chest', 4), ('Triceps', 2), 
+#                                         ('Traps', 2), ('Shoulders', 3)])    
 # print(routine)
+
+# routine = create_basic_routine(['Push', 'Legs', 'Legs', 'Pull'])
+
+# print(routine,'\n\n')
+# for i in routine:
+#     print(i, '\n\n')
 
 # for days in routine:
 #     print(days,'\n')

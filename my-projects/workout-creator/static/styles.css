@@ -8,55 +8,49 @@ body {
     text-decoration: none;
 }
 
+header {
+    width: 100%;
+    background-position: center;
+    background-color: #171818;
+    vertical-align: center;
+    border-radius: 4px;
+
+}
+
 a {
     text-decoration: none;
     background-color: none;
     color: #ebebeb;
 }
 
-header {
-    width: 100%;
-    background-position: center;
-    background-color: #171818;
-    padding-top: 1px;
-    border-radius: 4px;  
-    padding-bottom: 15px;
+h1 {
+    margin: 15px;
+    padding: 20px;
 }
 
-input,select {
-    border: 1px solid black;
-    border-radius: 4px;
-    margin-top: 2px;  
+small {
+    display: inline-block;
+    padding-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-#goal {
-    width: 105px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-
-.input_text, .input_option {
-    width: 85px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
 
 h3 {
-    margin-bottom: 15px;
-    margin-top: 25px;
+    margin: 15px;
+    padding: 20px;
 }
 
-.input_radio {
-    line-height: 1.5;
+.predef {
+    margin-left: 25px;
 }
 
-.input_submit {
+.submit {
     border-style: outset;
     border: 2px solid black;
     border-radius: 4px;
-    width: 150;
-    height: 50px;
+    width: 270px;
+    height: 45px;
     font-size:  17px;
     margin-top: 25px;
     text-align: center;
@@ -65,9 +59,17 @@ h3 {
 }
 
 footer {
-    margin-top: 30px;
-    line-height: 0.5;
+    margin-top: 20px;
+    line-height: 1;
     font-size: 15px;
+    vertical-align: center;
+    width: 100%;
+    background-position: center;
+    background-color: #171818;
+    padding: 2px;
+    border-radius: 4px;
+
+
 }
 
 table {
@@ -76,9 +78,6 @@ table {
     min-width: 600px;    
     margin-left: auto;
     margin-right: auto;
-}
-.personal_info {
-    width: 40%;    
 }
 
 .workout {
