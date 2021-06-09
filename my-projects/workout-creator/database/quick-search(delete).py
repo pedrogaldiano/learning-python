@@ -3,14 +3,17 @@ import sqlite3
 connect = sqlite3.connect('exercises-data.db')
 db = connect.cursor()
 
-db.execute("SELECT muscle_name FROM muscles")
+# db.execute('''DELETE FROM muscles WHERE muscle_id = 2''')
+
+# db.execute("SELECT * FROM muscles")
 
 items = db.fetchall()
 
 
 
 for item in items:
-    print(f"'{item[0]}'", end=', ')
+    print(item)
 
-print(len(items))
-db.close()
+connect.commit()
+connect.close()
+

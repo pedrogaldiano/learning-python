@@ -1,21 +1,6 @@
 import sqlite3
 import random
 
- # def IMC(height, weight):
- #    imc =int(weight)/(int(height)/100)**2
-    
- #    if imc <= 18.5:
- #        return 'Underweight'
- #    elif imc > 18.5 and imc <= 25:
- #        return 'Healthy'
- #    elif imc > 25 and imc <= 30:
- #        return 'Overweight'
- #    elif imc > 30 and imc <= 39.9:
- #        return 'Obese'
- #    else:
- #        return 'Extremely Obese'
-
-
 def check_input(input_routine):
         selected = input_routine
         if selected in ['Full body', 'Push', 'Pull', 'Legs', 'Abductors',
@@ -103,13 +88,13 @@ def create_personalized_routine(routine):
     for target in targets:
         exercises.append((get_exercise(target), target))
     
-    return exercises
+    return [exercises]
         
         
         
         
-# routine = create_personalized_routine([('Chest', 4), ('Triceps', 2), 
-#                                         ('Traps', 2), ('Shoulders', 3)])    
+# routine = create_personalized_routine([('Chest', '4'), ('Triceps', '2'), 
+#                                         ('Traps', '2'), ('Shoulders', '3')])    
 # print(routine)
 
 # routine = create_basic_routine(['Push', 'Legs', 'Legs', 'Pull'])
