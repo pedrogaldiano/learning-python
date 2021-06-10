@@ -5,7 +5,7 @@ db = connect.cursor()
 # 
 # db.execute('''SELECT * FROM muscles''')
 
-db.execute("SELECT count(exercise), muscle_id FROM exercises GROUP BY muscle_id  ORDER BY count(exercise) ASC")
+db.execute("SELECT exercise, muscle_id FROM exercises where muscle_id=9 or muscle_id=11")
 
 items = db.fetchall()
 

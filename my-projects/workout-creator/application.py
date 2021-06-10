@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from helpers import create_basic_routine, create_personalized_routine
 
-predefined_routine = ['Full body', 'Push', 'Pull', 'Legs']
+predef_routines = ['Full body', 'Push', 'Pull', 'Legs']
 
 muscles_list = ['Chest', 'Triceps', 'Lats', 'Traps', 'Neck', 'Shoulders', 
                 'Middle back', 'Lower back', 'Biceps', 'Forearms',
@@ -18,7 +18,7 @@ def index():
         if request.form.get('action') == 'Generate Predefined Workout':
             
             routine_selected = []
-            for selected in predefined_routine:
+            for selected in predef_routines:
                 if request.form.get(selected) == 'on':
                     routine_selected.append(selected)
                 
@@ -60,7 +60,7 @@ def index():
             
         
     return render_template('index.html', muscles_list=muscles_list, 
-                           predefined_routine=predefined_routine)
+                           predef_routines=predef_routines)
 
 
 if __name__ == "__main__":  

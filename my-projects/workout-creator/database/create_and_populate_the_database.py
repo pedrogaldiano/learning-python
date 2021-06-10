@@ -60,6 +60,20 @@ def muscles_db(csv_file, db):
     
     print('Muscles added')
 
+# Remove two muscles groups and add Aerobic
+def update(db):
+
+    db.execute("UPDATE exercises SET muscle_id=9 WHERE muscle_id=11")
+    db.execute("UPDATE muscles SET muscle_name='Aerobic' WHERE muscle_id=9")
+    db.execute("DELETE FROM muscles WHERE muscle_id=11")
+    db.execute("SELECT * FROM exercises WHERE muscle_id=9 or muscle_id=11")
+    x = db.fetchall()
+    print(x)
+    
+    db.execute("SELECT * FROM muscles")
+    y = db.fetchall()
+    print(y)
+
 
 def main():
     csv_file = 'exercises.csv'
@@ -70,6 +84,14 @@ def main():
     create_db(db)
     muscles_db(csv_file, db)
     exercises_db(csv_file, db)
+    
+    # Check the id of the Treadmill and Stationary 
+    # and change the value in update function
+    # db.execute("SELECT * FROM muscles")
+    # y = db.fetchall()
+    # print(y)
+    
+    # update(db)
     
     connect.commit()
     connect.close()
