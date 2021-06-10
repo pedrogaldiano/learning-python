@@ -19,11 +19,12 @@
             <td>{{ exercises[1] }}</td>
             <td><a href="https://www.youtube.com/results?search_query={{ exercises[0] }}"
             target="_blank" rel="noopener noreferrer">{{ exercises[0] }}</a></td> 
-            {% if exercises[0] == "Aerobic"}
-                <td></td>
+            {% if exercises[1] != "Aerobic" %}
+                <td>{{sets}} x {{reps}}</td>
             {% endif %}
             
-            <td>{{sets}} x {{reps}}</td>
+                            
+
 
                        
         </tr>

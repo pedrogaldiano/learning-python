@@ -28,7 +28,7 @@ def index():
                 sets = request.form.get('sets')
                 reps = request.form.get('reps')
 
-            if not (user_routine == [] or sets is None or reps is None):
+            if not (user_routine == [] or sets is None or reps is None):                
                 return render_template('workout.html', routine=routine, 
                                        sets=sets, reps=reps)
         
@@ -42,14 +42,21 @@ def index():
                     number_exercises = int(request.form.get('number_ex'))
                     
                     if number_exercises >= 1 and number_exercises <= 8:
-                        personalized.append((muscle_selected, number_exercises))
+                        personalized.append((muscle, number_exercises))
                         
-            if not personalized == []:
-                routine = create_personalized_routine(personalized)
-                routine_name = request.form.get('routine_name')
+            sets = request.form.get('sets')
+            reps = request.form.get('reps')   
+            
+            if not (personalized == [] or sets is None or reps is None):
                 
-                return render_template('wokout.html', routine=routine,
-                                       routine_name=routine_name)
+                
+                routine_personalized = create_personalized_routine(personalized)
+                routine_name = [request.form.get('routine_name')]
+                routine = zip(routine_name, routine_personalized)
+                
+                return render_template('workout.html', routine=routine,
+                                       routine_name=routine_name, reps=reps,
+                                       sets=sets)
             
         
     return render_template('index.html', muscles_list=muscles_list, 

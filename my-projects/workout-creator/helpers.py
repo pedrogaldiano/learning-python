@@ -85,17 +85,36 @@ def create_personalized_routine(routine):
         targets += ([muscle] * times)
     
     exercises = []
+    temp = []
     for target in targets:
-        exercises.append((get_exercise(target), target))
-    
+        i = 0
+        while True:
+            i += 1   
+            exercise = get_exercise(target)
+
+            if not (exercise in temp):
+                break
+
+            elif i == 8:
+                exercise = 'Not found'
+                break
+            
+        temp.append(exercise)    
+        exercises.append((exercise, target))
     return [exercises]
         
         
-        
-        
-# routine = create_personalized_routine([('Chest', '4'), ('Triceps', '2'), 
-#                                         ('Traps', '2'), ('Shoulders', '3')])    
-# print(routine)
+# ls = []    
+# for i in range(1000):
+#     routine = create_personalized_routine([('Abductors', 8)])   
+#     print(routine)
+#     ls.append(routine)
+# x = sorted(ls)
+# print(x)
+    
+# for i in routine:
+#     for k in i:
+#         print(k)
 
 # routine = create_basic_routine(['Push', 'Legs', 'Legs', 'Pull'])
 

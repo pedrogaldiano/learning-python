@@ -6,6 +6,8 @@
 # will be noticed with a database this small. But, I thought that doing it
 # would be a nice learning method
 
+# remover muscle_id 1 e 2 e colocar aerobic no lugar e mesclar tudo
+
 import sqlite3
 
 # Create the database
