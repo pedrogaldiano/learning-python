@@ -59,7 +59,7 @@
                     </td>
 
                     <td>
-                        <select class="number_ex" name="number_ex">
+                        <select name="{{ number_ex_list[i] }}">
                             <option disabled selected value="">Quantity</option>
                             {% for number in range(1,9) %}
                             <option value="{{ number }}">{{ number }}</option>
@@ -75,7 +75,7 @@
                     </td>
 
                     <td>
-                        <select name="number_ex">
+                        <select name="{{ number_ex_list[i+1] }}">
                             <option disabled selected value="">Quantity</option>
                             {% for number in range(1,9) %}
                             <option value="{{ number }}">{{ number }}</option>

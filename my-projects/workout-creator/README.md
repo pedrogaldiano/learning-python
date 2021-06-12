@@ -1,7 +1,7 @@
 
 # Workout Generator
 
-#### Video Demo: [Video link here](https://www.youtube.com/)
+#### Video Demo: [Video link here](https://youtu.be/MyY3GI8R1aI)
 #### Description: 
 Workout  an application capable of Generate a workout program by  
 choosing "randomly" the exercises for each muscle group defined by some filters.
@@ -41,4 +41,5 @@ I'm not that this data set so small really needed a relational database, but was
 * Allow the user to use checkboxes rather than radio inputs to choose the predfined routines ==== [OK]  
 * Allow the user to select the muscles he or she want to workout and how many exercises for each muscles ==== [OK]  
 * Fix bugs in the helpers ==== [OK]  
-* Fix some more bugs... ==== [OK]  
+* Fix some more bugs... ==== [OK]   
+  

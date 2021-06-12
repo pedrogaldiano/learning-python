@@ -83,7 +83,7 @@ def create_personalized_routine(routine):
     targets = []
     for (muscle, times) in routine:
         targets += ([muscle] * times)
-    
+
     exercises = []
     for target in targets:
         while True: 
